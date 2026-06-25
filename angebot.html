@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COMPANY VALENCIA | Angebot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg:    #f8e71c;
+            --ink:   #0f0d00;
+            --blue:  #42a7c6;
+            --muted: rgba(15,13,0,0.68);
+            --line:  rgba(15,13,0,0.12);
+        }
+
+        *, *::before, *::after { box-sizing: border-box; }
+
+        @media (prefers-reduced-motion: reduce) {
+            * { animation: none !important; transition: none !important; }
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--ink);
+            font-family: 'Space Mono', monospace;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 48px 24px 80px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 540px;
+        }
+
+        /* ── NAV ── */
+        .back-link {
+            text-decoration: none;
+            color: var(--ink);
+            font-size: 0.72rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-bottom: 48px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.55;
+            border-bottom: 1px solid currentColor;
+            padding-bottom: 2px;
+            transition: opacity 0.18s ease;
+        }
+        .back-link:hover { opacity: 1; }
+
+        /* ── HEADER ── */
+        .eyebrow {
+            font-size: 0.68rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 8px;
+            animation: fadeDown 0.5s ease both;
+        }
+
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: clamp(1.8rem, 8vw, 2.8rem);
+            margin: 0 0 48px;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            line-height: 1.05;
+            animation: fadeDown 0.5s 0.05s ease both;
+        }
+
+        /* ── PRODUCT CARD ── */
+        .card {
+            border: 1.5px solid var(--ink);
+            padding: 28px 28px 24px;
+            margin-bottom: 16px;
+            animation: fadeUp 0.5s 0.1s ease both;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            gap: 16px;
+        }
+
+        .card-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.68rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--ink);
+            color: var(--bg);
+            padding: 3px 10px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .card-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+            margin: 0 0 4px;
+        }
+
+        .card-sub {
+            font-size: 0.68rem;
+            color: var(--muted);
+            letter-spacing: 0.5px;
+        }
+
+        .card-price {
+            text-align: right;
+            flex-shrink: 0;
+        }
+
+        .price-from {
+            font-size: 0.62rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .price-amount {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.8rem;
+            letter-spacing: -1px;
+            line-height: 1;
+            display: block;
+        }
+
+        .price-unit {
+            font-size: 0.62rem;
+            color: var(--muted);
+            display: block;
+            margin-top: 3px;
+            letter-spacing: 1px;
+        }
+
+        /* ── DIVIDER ── */
+        .card-divider {
+            border: none;
+            border-top: 1px solid var(--line);
+            margin: 20px 0;
+        }
+
+        /* ── INGREDIENTS ── */
+        .section-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .ingredients {
+            font-size: 0.78rem;
+            line-height: 1.7;
+            color: var(--ink);
+        }
+
+        /* ── INCLUDES LIST ── */
+        .includes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.75rem;
+            line-height: 1;
+        }
+
+        .includes li {
+            padding: 7px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .includes li:last-child { border-bottom: none; }
+
+        .includes li::before {
+            content: '✓';
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+
+        /* ── VEGETARIANA CARD ── */
+        .card-veg {
+            border: 1.5px dashed rgba(15,13,0,0.3);
+            padding: 20px 28px;
+            margin-bottom: 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            animation: fadeUp 0.5s 0.18s ease both;
+        }
+
+        .veg-info { flex: 1; }
+
+        .veg-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: var(--blue);
+            color: #fff;
+            padding: 2px 8px;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        .veg-title {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            margin: 0 0 4px;
+        }
+
+        .veg-sub {
+            font-size: 0.68rem;
+            color: var(--muted);
+        }
+
+        .veg-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-align: right;
+            color: var(--muted);
+        }
+
+        /* ── NOTE ── */
+        .note {
+            font-size: 0.72rem;
+            line-height: 1.7;
+            color: var(--muted);
+            border-left: 2px solid var(--ink);
+            padding-left: 16px;
+            margin-bottom: 48px;
+            animation: fadeUp 0.5s 0.25s ease both;
+        }
+
+        /* ── CTA ── */
+        .cta-block {
+            animation: fadeUp 0.5s 0.32s ease both;
+        }
+
+        .cta-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 14px;
+        }
+
+        .btn-cta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--ink);
+            color: var(--bg);
+            text-decoration: none;
+            padding: 18px 24px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background 0.18s ease, transform 0.18s ease;
+        }
+
+        .btn-cta:hover {
+            background: #2a2500;
+            transform: translateY(-1px);
+        }
+
+        .btn-cta-sub {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.62rem;
+            font-weight: 400;
+            text-transform: none;
+            opacity: 0.6;
+            display: block;
+            margin-top: 3px;
+            letter-spacing: 0;
+        }
+
+        /* ── FOOTER ── */
+        .footer-links {
+            margin-top: 52px;
+            text-align: center;
+        }
+
+        .footer-link-item {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.65rem;
+            color: var(--ink);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.28;
+            transition: opacity 0.18s ease;
+        }
+
+        .footer-link-item:hover { opacity: 0.8; }
+
+        .footer {
+            margin-top: 16px;
+            font-size: 0.62rem;
+            color: var(--ink);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.22;
+            text-align: center;
+        }
+
+        /* ── ANIMATIONS ── */
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(14px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <a href="/" class="back-link">← Zurück / Back</a>
+
+        <span class="eyebrow">Company Valencia · Showcooking</span>
+        <h1>Angebot<br>u Prise</h1>
+
+        <!-- ── MAIN CARD ── -->
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <div class="card-tag">Ab 10–12 Pers.</div>
+                    <div class="card-title">La Paella</div>
+                    <div class="card-sub">Valencianische Originalrezept · Live gekocht</div>
+                </div>
+                <div class="card-price">
+                    <span class="price-from">ab / from</span>
+                    <span class="price-amount">CHF 290</span>
+                    <span class="price-unit">pro Paella</span>
+                </div>
+            </div>
+
+            <hr class="card-divider">
+
+            <span class="section-label">Zutaten · Ingredients</span>
+            <p class="ingredients">
+                Poulet · Kaninchen · grüne Bohnen · Tomate · Knoblauch ·
+                Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser
+            </p>
+
+            <hr class="card-divider">
+
+            <span class="section-label">Inbegriffen · Included</span>
+            <ul class="includes">
+                <li>Showcooking live vor Ort</li>
+                <li>Alle Zutaten und Material</li>
+                <li>An- und Abreise in Basel</li>
+                <li>Aufbau, Kochen und Aufräumen</li>
+                <li>Emplatado · Service am Tisch</li>
+            </ul>
+        </div>
+
+        <!-- ── VEGETARIANA ── -->
+        <div class="card-veg">
+            <div class="veg-info">
+                <div class="veg-tag">Option</div>
+                <div class="veg-title">Vegetariana</div>
+                <div class="veg-sub">Verfügbar · Available on request</div>
+            </div>
+            <div class="veg-price">Preis auf<br>Anfrage</div>
+        </div>
+
+        <!-- ── NOTE ── -->
+        <div class="note">
+            Für grössere Gruppen, zwei Paellas oder spezielle Anlässe — einfach anfragen.
+            Jedes Event ist anders und wir finden zusammen die beste Lösung.<br><br>
+            Und ja, ich kann die Paella anpassen — andere Gemüse, andere Mengen, andere Stimmung.
+            Was ich <em>nicht</em> mache: Meeresfrüchte oder gemischte Paella.
+            Nicht aus Bequemlichkeit — aus Überzeugung. 🥘
+        </div>
+
+        <!-- ── CTA ── -->
+        <div class="cta-block">
+            <span class="cta-label">Interesse? · Interested?</span>
+            <a href="https://wa.me/+41772146639" class="btn-cta" target="_blank" rel="noopener">
+                <div>
+                    ANFRAGE VIA WHATSAPP
+                    <span class="btn-cta-sub">Oder schreib mir · hola@paellabasel.ch</span>
+                </div>
+                →
+            </a>
+        </div>
+
+        <div class="footer-links">
+            <a href="impressum.html" class="footer-link-item">[ IMPRESSUM ]</a>
+        </div>
+        <div class="footer">&copy; 2026 COMPANY VALENCIA | BASEL, CH</div>
+
+    </div>
+</body>
+</html>
