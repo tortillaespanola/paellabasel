@@ -10,17 +10,16 @@
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.paellabasel.ch/">
 
-    <!-- Open Graph (WhatsApp, Facebook, LinkedIn preview) -->
     <meta property="og:title" content="Company Valencia | Paella Showcooking Basel">
     <meta property="og:description" content="Valencianische Paella live vor Ort — für dein Fest, deinen Hof, dein Event. Ab 10 Personen. Basel, Schweiz.">
     <meta property="og:url" content="https://www.paellabasel.ch/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_CH">
 
-    <!-- Twitter/X preview -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Company Valencia | Paella Basel">
     <meta name="twitter:description" content="Valencianische Paella live gekocht in Basel. Showcooking ab 10 Personen.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -40,9 +39,7 @@
             * { animation: none !important; transition: none !important; }
         }
 
-        html {
-            background-color: var(--sun);
-        }
+        html { background-color: var(--sun); }
 
         body {
             background-color: transparent;
@@ -231,7 +228,6 @@
             letter-spacing: 0.3px;
         }
 
-        /* CTA — negro sobre amarillo invertido */
         .btn-main {
             background: var(--ink);
             color: var(--sun);
@@ -246,6 +242,85 @@
         .btn-main:hover {
             background: #1a1a1a;
             padding-left: 30px;
+        }
+
+        /* ── CROSS-LINK ── */
+        .xlink-wrapper {
+            max-width: 420px;
+            margin: 48px auto 0;
+            animation: fadeUp 0.55s 0.44s ease both;
+        }
+
+        .xlink-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            text-decoration: none;
+            color: var(--ink);
+            background: rgba(15,13,0,0.06);
+            border: 1.5px solid var(--ink);
+            border-left: 5px solid var(--ink);
+            transition: transform 0.18s ease, background 0.18s ease;
+        }
+
+        .xlink-banner:hover {
+            transform: translateX(4px);
+            background: rgba(15,13,0,0.10);
+        }
+
+        .xlink-pill {
+            display: inline-block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            font-weight: 700;
+            background: var(--ink);
+            color: var(--sun);
+            margin-bottom: 8px;
+        }
+
+        .xlink-eyebrow {
+            display: block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.58rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.45;
+            margin-bottom: 5px;
+        }
+
+        .xlink-title {
+            display: block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .xlink-sub {
+            display: block;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.62rem;
+            margin-top: 4px;
+            opacity: 0.5;
+            letter-spacing: 0.5px;
+        }
+
+        .xlink-arrow {
+            font-size: 1.4rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            margin-left: 16px;
+            transition: transform 0.18s ease;
+        }
+
+        .xlink-banner:hover .xlink-arrow {
+            transform: translateX(4px);
         }
 
         /* ── FOOTER ── */
@@ -290,7 +365,6 @@
 
         .container { position: relative; z-index: 1; }
 
-        /* ── ANIMATIONS ── */
         @keyframes fadeDown {
             from { opacity: 0; transform: translateY(-10px); }
             to   { opacity: 1; transform: translateY(0); }
@@ -311,7 +385,6 @@
 
     <div class="container">
 
-        <!-- ── HERO ── -->
         <div class="hero">
             <span class="hero-eyebrow">Paellas · Showcooking · Basel</span>
             <div>
@@ -322,10 +395,8 @@
             <div class="location-tag">Live · Basel · Open Air</div>
         </div>
 
-        <!-- ── DIVIDER ── -->
         <div class="divider"></div>
 
-        <!-- ── CONCEPT ── -->
         <div class="concept">
             <span class="concept-label">Was ist das</span>
             <p class="concept-text">
@@ -334,7 +405,6 @@
             </p>
         </div>
 
-        <!-- ── LINKS ── -->
         <div class="links-cascade">
 
             <a href="https://wa.me/+41772146639" class="btn-link btn-main" target="_blank" rel="noopener">
@@ -363,7 +433,18 @@
 
         </div>
 
-        <!-- ── FOOTER ── -->
+        <div class="xlink-wrapper">
+            <a href="https://www.espanola.ch" class="xlink-banner" target="_blank" rel="noopener">
+                <div>
+                    <span class="xlink-pill">Same hands · Gleiche Händ</span>
+                    <span class="xlink-eyebrow">Tortilla · Basel · Zum Abholen</span>
+                    <span class="xlink-title">ESPAÑOLA</span>
+                    <span class="xlink-sub">Hausgemachte spanische Tortilla · espanola.ch</span>
+                </div>
+                <span class="xlink-arrow">→</span>
+            </a>
+        </div>
+
         <div class="footer-links">
             <a href="impressum.html" class="footer-link-item">[ IMPRESSUM ]</a>
         </div>
@@ -375,7 +456,6 @@
     </div>
 
     <script>
-        // Respect reduced motion
         const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         if (!prefersReduced) {
             const canvas = document.getElementById('rice-canvas');
@@ -415,15 +495,12 @@
                 ctx.rotate(g.angle);
                 ctx.globalAlpha = g.opacity;
 
-                // Grain shape: rounded ellipse (rice kernel)
                 ctx.beginPath();
                 ctx.ellipse(0, 0, g.w / 2, g.h / 2, 0, 0, Math.PI * 2);
 
-                // White fill with slight warm tint
                 ctx.fillStyle = 'rgba(255, 252, 240, 1)';
                 ctx.fill();
 
-                // Subtle inner highlight
                 const grad = ctx.createLinearGradient(-g.w / 2, -g.h / 2, g.w / 2, g.h / 2);
                 grad.addColorStop(0, 'rgba(255,255,255,0.6)');
                 grad.addColorStop(1, 'rgba(220,210,180,0.1)');
@@ -437,13 +514,11 @@
                 ctx.clearRect(0, 0, canvas.width, canvas.height);
 
                 grains.forEach(g => {
-                    // Gentle float downward + sideways wobble
                     g.wobble += g.wobbleSpeed;
                     g.y += g.speed;
                     g.x += g.drift + Math.sin(g.wobble) * 0.25;
                     g.angle += 0.002;
 
-                    // Wrap around edges
                     if (g.y > canvas.height + 20) { g.y = -20; g.x = Math.random() * canvas.width; }
                     if (g.x > canvas.width  + 20) { g.x = -20; }
                     if (g.x < -20)                { g.x = canvas.width + 20; }
