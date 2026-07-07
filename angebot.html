@@ -71,11 +71,92 @@
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
             font-size: clamp(1.8rem, 8vw, 2.8rem);
-            margin: 0 0 48px;
+            margin: 0 0 16px;
             text-transform: uppercase;
             letter-spacing: -1px;
             line-height: 1.05;
             animation: fadeDown 0.5s 0.05s ease both;
+        }
+
+        .group-size-tag {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            background: var(--blue);
+            color: #fff;
+            padding: 14px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 40px;
+            animation: fadeDown 0.5s 0.08s ease both;
+        }
+
+        .group-size-tag .gst-price {
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        /* ── INCLUDES CARD (top) ── */
+        .card-includes {
+            border: 1.5px solid var(--ink);
+            padding: 24px 28px;
+            margin-bottom: 40px;
+            animation: fadeUp 0.5s 0.1s ease both;
+        }
+
+        .card-includes .section-label {
+            margin-bottom: 14px;
+        }
+
+        .includes {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 0.78rem;
+            line-height: 1;
+        }
+
+        .includes li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .includes li:last-child { border-bottom: none; }
+
+        .includes li::before {
+            content: '✓';
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.72rem;
+            flex-shrink: 0;
+        }
+
+        /* ── SECTION LABEL (shared) ── */
+        .section-label {
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .options-label {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--muted);
+            display: block;
+            margin-bottom: 16px;
+            animation: fadeUp 0.5s 0.14s ease both;
         }
 
         /* ── PRODUCT CARD ── */
@@ -105,6 +186,11 @@
             padding: 3px 10px;
             display: inline-block;
             margin-bottom: 8px;
+        }
+
+        .card-tag.blue-tag {
+            background: var(--blue);
+            color: #fff;
         }
 
         .card-title {
@@ -145,6 +231,10 @@
             display: block;
         }
 
+        .price-amount.small {
+            font-size: 1.1rem;
+        }
+
         .price-unit {
             font-size: 0.62rem;
             color: var(--muted);
@@ -161,106 +251,26 @@
         }
 
         /* ── INGREDIENTS ── */
-        .section-label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--muted);
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
         .ingredients {
             font-size: 0.78rem;
             line-height: 1.7;
             color: var(--ink);
         }
 
-        /* ── INCLUDES LIST ── */
-        .includes {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-            font-size: 0.75rem;
-            line-height: 1;
-        }
-
-        .includes li {
-            padding: 7px 0;
-            border-bottom: 1px solid var(--line);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .includes li:last-child { border-bottom: none; }
-
-        .includes li::before {
-            content: '✓';
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 0.7rem;
-            flex-shrink: 0;
-        }
-
-        /* ── VEGETARIANA CARD ── */
-        .card-veg {
-            border: 1.5px dashed rgba(15,13,0,0.3);
-            padding: 20px 28px;
-            margin-bottom: 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 16px;
-            animation: fadeUp 0.5s 0.18s ease both;
-        }
-
-        .veg-info { flex: 1; }
-
-        .veg-tag {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 0.62rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            background: var(--blue);
-            color: #fff;
-            padding: 2px 8px;
-            display: inline-block;
-            margin-bottom: 8px;
-        }
-
-        .veg-title {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 1rem;
-            text-transform: uppercase;
-            margin: 0 0 4px;
-        }
-
-        .veg-sub {
-            font-size: 0.68rem;
-            color: var(--muted);
-        }
-
-        .veg-price {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            font-size: 0.78rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            text-align: right;
-            color: var(--muted);
+        .options-wrap {
+            margin-bottom: 40px;
         }
 
         /* ── NOTE ── */
         .note {
-            font-size: 0.72rem;
-            line-height: 1.7;
-            color: var(--muted);
-            border-left: 2px solid var(--ink);
-            padding-left: 16px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--ink);
+            background: rgba(15,13,0,0.05);
+            border-left: 4px solid var(--blue);
+            padding: 18px 20px;
             margin-bottom: 48px;
             animation: fadeUp 0.5s 0.25s ease both;
         }
@@ -358,32 +368,10 @@
 
         <span class="eyebrow">Company Valencia · Showcooking</span>
         <h1>Angebot<br>u Prise</h1>
+        <span class="group-size-tag"><span>Ab 10–12 Pers.</span><span class="gst-price">CHF 290</span></span>
 
-        <!-- ── MAIN CARD ── -->
-        <div class="card">
-            <div class="card-header">
-                <div>
-                    <div class="card-tag">Ab 10–12 Pers.</div>
-                    <div class="card-title">La Paella</div>
-                    <div class="card-sub">Valencianische Originalrezept · Live gekocht</div>
-                </div>
-                <div class="card-price">
-                    <span class="price-from">ab / from</span>
-                    <span class="price-amount">CHF 290</span>
-                    <span class="price-unit">pro Paella</span>
-                </div>
-            </div>
-
-            <hr class="card-divider">
-
-            <span class="section-label">Zutaten · Ingredients</span>
-            <p class="ingredients">
-                Poulet · Kaninchen · grüne Bohnen · Tomate · Knoblauch ·
-                Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser
-            </p>
-
-            <hr class="card-divider">
-
+        <!-- ── INBEGRIFFEN (jetzt oben) ── -->
+        <div class="card-includes">
             <span class="section-label">Inbegriffen · Included</span>
             <ul class="includes">
                 <li>Showcooking live vor Ort</li>
@@ -394,23 +382,80 @@
             </ul>
         </div>
 
-        <!-- ── VEGETARIANA ── -->
-        <div class="card-veg">
-            <div class="veg-info">
-                <div class="veg-tag">Option</div>
-                <div class="veg-title">Vegetariana</div>
-                <div class="veg-sub">Verfügbar · Available on request</div>
-            </div>
-            <div class="veg-price">Preis auf<br>Anfrage</div>
-        </div>
-
         <!-- ── NOTE ── -->
         <div class="note">
             Für grössere Gruppen, zwei Paellas oder spezielle Anlässe — einfach anfragen.
-            Jedes Event ist anders und wir finden zusammen die beste Lösung.<br><br>
-            Und ja, ich kann die Paella anpassen — andere Gemüse, andere Mengen, andere Stimmung.
-            Was ich <em>nicht</em> mache: Meeresfrüchte oder gemischte Paella.
-            Nicht aus Bequemlichkeit — aus Überzeugung. 🥘
+            Jedes Event ist anders und wir finden zusammen die beste Lösung.
+            Die Zutaten lassen sich jederzeit an eure Bedürfnisse anpassen. 🥘
+        </div>
+
+        <!-- ── OPTIONEN ── -->
+        <span class="options-label">Optionen · Options</span>
+        <div class="options-wrap">
+
+            <!-- VALENCIANA -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Valenciana</div>
+                        <div class="card-sub">Original valencianisches Rezept · Live gekocht</div>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-from">Preis</span>
+                        <span class="price-amount small">Auf Anfrage</span>
+                        <span class="price-unit">on request</span>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <span class="section-label">Zutaten · Ingredients</span>
+                <p class="ingredients">
+                    Poulet · Kaninchen · grüne Bohnen · Tomate · Knoblauch ·
+                    Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser
+                </p>
+            </div>
+
+            <!-- VEGETARIANA -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Vegetariana</div>
+                        <div class="card-sub">Saisonales Gemüse · Live gekocht</div>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-from">Preis</span>
+                        <span class="price-amount small">Auf Anfrage</span>
+                        <span class="price-unit">on request</span>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <span class="section-label">Zutaten · Ingredients</span>
+                <p class="ingredients">
+                    Saisonales Gemüse · Tomate · Knoblauch · Safran ·
+                    Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Gemüsebrühe
+                </p>
+            </div>
+
+            <!-- MIXTA -->
+            <div class="card">
+                <div class="card-header">
+                    <div>
+                        <div class="card-title">Mixta</div>
+                        <div class="card-sub">Fleisch &amp; Meeresfrüchte · Live gekocht</div>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-from">Preis</span>
+                        <span class="price-amount small">Auf Anfrage</span>
+                        <span class="price-unit">on request</span>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <span class="section-label">Zutaten · Ingredients</span>
+                <p class="ingredients">
+                    Poulet · Meeresfrüchte · grüne Bohnen · Tomate · Knoblauch ·
+                    Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser &amp; Fischfond
+                </p>
+            </div>
+
         </div>
 
         <!-- ── CTA ── -->
