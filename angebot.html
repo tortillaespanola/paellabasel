@@ -38,6 +38,42 @@
             max-width: 540px;
         }
 
+        /* ── LANGUAGE SWITCH ── */
+        .lang-switch {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 10;
+            display: flex;
+            gap: 0;
+            background: var(--ink);
+            padding: 3px;
+            animation: fadeDown 0.5s ease both;
+        }
+
+        .lang-btn {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            font-size: 0.68rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            background: transparent;
+            color: rgba(248,231,28,0.55);
+            border: none;
+            padding: 7px 12px;
+            cursor: pointer;
+            transition: background 0.15s ease, color 0.15s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--bg);
+        }
+
+        .lang-btn.active {
+            background: var(--bg);
+            color: var(--ink);
+        }
+
         /* ── NAV ── */
         .back-link {
             text-decoration: none;
@@ -362,18 +398,25 @@
     </style>
 </head>
 <body>
+
+    <div class="lang-switch" role="group" aria-label="Language selector">
+        <button type="button" class="lang-btn" data-lang="de">DE</button>
+        <button type="button" class="lang-btn" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="es">ES</button>
+    </div>
+
     <div class="container">
 
-        <a href="/" class="back-link">← Zurück / Back</a>
+        <a href="/" class="back-link" data-i18n="back_link">← Zurück / Back</a>
 
         <span class="eyebrow">Company Valencia · Showcooking</span>
-        <h1>Angebot<br>u Prise</h1>
-        <span class="group-size-tag"><span>Ab 10–12 Pers.</span><span class="gst-price">CHF 290</span></span>
+        <h1 data-i18n="h1">Angebot<br>u Prise</h1>
+        <span class="group-size-tag"><span data-i18n="group_size">Ab 10–12 Pers.</span><span class="gst-price">CHF 290</span></span>
 
         <!-- ── INBEGRIFFEN (jetzt oben) ── -->
         <div class="card-includes">
-            <span class="section-label">Inbegriffen · Included</span>
-            <ul class="includes">
+            <span class="section-label" data-i18n="included_label">Inbegriffen · Included</span>
+            <ul class="includes" data-i18n-list="includes">
                 <li>Showcooking live vor Ort</li>
                 <li>Alle Zutaten und Material</li>
                 <li>An- und Abreise in Basel</li>
@@ -383,14 +426,14 @@
         </div>
 
         <!-- ── NOTE ── -->
-        <div class="note">
+        <div class="note" data-i18n="note">
             Für grössere Gruppen, zwei Paellas oder spezielle Anlässe — einfach anfragen.
             Jedes Event ist anders und wir finden zusammen die beste Lösung.
             Die Zutaten lassen sich jederzeit an eure Bedürfnisse anpassen. 🥘
         </div>
 
         <!-- ── OPTIONEN ── -->
-        <span class="options-label">Optionen · Options</span>
+        <span class="options-label" data-i18n="options_label">Optionen · Options</span>
         <div class="options-wrap">
 
             <!-- VALENCIANA -->
@@ -398,16 +441,16 @@
                 <div class="card-header">
                     <div>
                         <div class="card-title">Valenciana</div>
-                        <div class="card-sub">Original valencianisches Rezept · Live gekocht</div>
+                        <div class="card-sub" data-i18n="valenciana_sub">Original valencianisches Rezept · Live gekocht</div>
                     </div>
                     <div class="card-price">
-                        <span class="price-from">Preis</span>
-                        <span class="price-amount small">Auf Anfrage</span>
+                        <span class="price-from" data-i18n="price_label">Preis</span>
+                        <span class="price-amount small" data-i18n="on_request">Auf Anfrage</span>
                         <span class="price-unit">on request</span>
                     </div>
                 </div>
                 <hr class="card-divider">
-                <span class="section-label">Zutaten · Ingredients</span>
+                <span class="section-label" data-i18n="ingredients_label">Zutaten · Ingredients</span>
                 <p class="ingredients">
                     Poulet · Kaninchen · grüne Bohnen · Tomate · Knoblauch ·
                     Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser
@@ -419,16 +462,16 @@
                 <div class="card-header">
                     <div>
                         <div class="card-title">Vegetariana</div>
-                        <div class="card-sub">Saisonales Gemüse · Live gekocht</div>
+                        <div class="card-sub" data-i18n="vegetariana_sub">Saisonales Gemüse · Live gekocht</div>
                     </div>
                     <div class="card-price">
-                        <span class="price-from">Preis</span>
-                        <span class="price-amount small">Auf Anfrage</span>
+                        <span class="price-from" data-i18n="price_label2">Preis</span>
+                        <span class="price-amount small" data-i18n="on_request2">Auf Anfrage</span>
                         <span class="price-unit">on request</span>
                     </div>
                 </div>
                 <hr class="card-divider">
-                <span class="section-label">Zutaten · Ingredients</span>
+                <span class="section-label" data-i18n="ingredients_label2">Zutaten · Ingredients</span>
                 <p class="ingredients">
                     Saisonales Gemüse · Tomate · Knoblauch · Safran ·
                     Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Gemüsebrühe
@@ -440,16 +483,16 @@
                 <div class="card-header">
                     <div>
                         <div class="card-title">Mixta</div>
-                        <div class="card-sub">Fleisch &amp; Meeresfrüchte · Live gekocht</div>
+                        <div class="card-sub" data-i18n="mixta_sub">Fleisch &amp; Meeresfrüchte · Live gekocht</div>
                     </div>
                     <div class="card-price">
-                        <span class="price-from">Preis</span>
-                        <span class="price-amount small">Auf Anfrage</span>
+                        <span class="price-from" data-i18n="price_label3">Preis</span>
+                        <span class="price-amount small" data-i18n="on_request3">Auf Anfrage</span>
                         <span class="price-unit">on request</span>
                     </div>
                 </div>
                 <hr class="card-divider">
-                <span class="section-label">Zutaten · Ingredients</span>
+                <span class="section-label" data-i18n="ingredients_label3">Zutaten · Ingredients</span>
                 <p class="ingredients">
                     Poulet · Meeresfrüchte · grüne Bohnen · Tomate · Knoblauch ·
                     Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser &amp; Fischfond
@@ -460,21 +503,158 @@
 
         <!-- ── CTA ── -->
         <div class="cta-block">
-            <span class="cta-label">Interesse? · Interested?</span>
+            <span class="cta-label" data-i18n="cta_label">Interesse? · Interested?</span>
             <a href="https://wa.me/+41772146639" class="btn-cta" target="_blank" rel="noopener">
                 <div>
-                    ANFRAGE VIA WHATSAPP
-                    <span class="btn-cta-sub">Oder schreib mir · hola@paellabasel.ch</span>
+                    <span data-i18n="cta_title">ANFRAGE VIA WHATSAPP</span>
+                    <span class="btn-cta-sub" data-i18n="cta_sub">Oder schreib mir · hola@paellabasel.ch</span>
                 </div>
                 →
             </a>
         </div>
 
         <div class="footer-links">
-            <a href="impressum.html" class="footer-link-item">[ IMPRESSUM ]</a>
+            <a href="impressum.html" class="footer-link-item" data-i18n="imprint">[ IMPRESSUM ]</a>
         </div>
-        <div class="footer">&copy; 2026 COMPANY VALENCIA | BASEL, CH</div>
+        <div class="footer" data-i18n="copyright">&copy; 2026 COMPANY VALENCIA | BASEL, CH</div>
 
     </div>
+
+    <script>
+        const translations = {
+            de: {
+                back_link: "← Zurück / Back",
+                h1: "Angebot<br>u Prise",
+                group_size: "Ab 10–12 Pers.",
+                included_label: "Inbegriffen · Included",
+                includes: [
+                    "Showcooking live vor Ort",
+                    "Alle Zutaten und Material",
+                    "An- und Abreise in Basel",
+                    "Aufbau, Kochen und Aufräumen",
+                    "Emplatado · Service am Tisch"
+                ],
+                note: "Für grössere Gruppen, zwei Paellas oder spezielle Anlässe — einfach anfragen. Jedes Event ist anders und wir finden zusammen die beste Lösung. Die Zutaten lassen sich jederzeit an eure Bedürfnisse anpassen. 🥘",
+                options_label: "Optionen · Options",
+                valenciana_sub: "Original valencianisches Rezept · Live gekocht",
+                vegetariana_sub: "Saisonales Gemüse · Live gekocht",
+                mixta_sub: "Fleisch &amp; Meeresfrüchte · Live gekocht",
+                price_label: "Preis", price_label2: "Preis", price_label3: "Preis",
+                on_request: "Auf Anfrage", on_request2: "Auf Anfrage", on_request3: "Auf Anfrage",
+                ingredients_label: "Zutaten · Ingredients",
+                ingredients_label2: "Zutaten · Ingredients",
+                ingredients_label3: "Zutaten · Ingredients",
+                cta_label: "Interesse? · Interested?",
+                cta_title: "ANFRAGE VIA WHATSAPP",
+                cta_sub: "Oder schreib mir · hola@paellabasel.ch",
+                imprint: "[ IMPRESSUM ]",
+                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+            },
+            en: {
+                back_link: "← Back",
+                h1: "Offer<br>&amp; Pricing",
+                group_size: "From 10–12 guests",
+                included_label: "Included",
+                includes: [
+                    "Live showcooking on site",
+                    "All ingredients and equipment",
+                    "Travel to/from within Basel",
+                    "Setup, cooking and cleanup",
+                    "Plating · Table service"
+                ],
+                note: "Bigger groups, two paellas, or something special? Just ask. Every event is different and together we'll find the best solution. Ingredients can always be adapted to your needs. 🥘",
+                options_label: "Options",
+                valenciana_sub: "Original Valencian recipe · Cooked live",
+                vegetariana_sub: "Seasonal vegetables · Cooked live",
+                mixta_sub: "Meat &amp; seafood · Cooked live",
+                price_label: "Price", price_label2: "Price", price_label3: "Price",
+                on_request: "On request", on_request2: "On request", on_request3: "On request",
+                ingredients_label: "Ingredients",
+                ingredients_label2: "Ingredients",
+                ingredients_label3: "Ingredients",
+                cta_label: "Interested?",
+                cta_title: "REQUEST VIA WHATSAPP",
+                cta_sub: "Or email me · hola@paellabasel.ch",
+                imprint: "[ IMPRINT ]",
+                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+            },
+            es: {
+                back_link: "← Volver",
+                h1: "Oferta<br>y Precios",
+                group_size: "Desde 10–12 pers.",
+                included_label: "Incluido",
+                includes: [
+                    "Showcooking en vivo, in situ",
+                    "Todos los ingredientes y el material",
+                    "Desplazamiento en Basilea",
+                    "Montaje, cocina y recogida",
+                    "Emplatado · Servicio en mesa"
+                ],
+                note: "¿Grupos más grandes, dos paellas o algo especial? Escríbeme. Cada evento es distinto y juntos encontramos la mejor solución. Los ingredientes se pueden adaptar siempre a vuestras necesidades. 🥘",
+                options_label: "Opciones",
+                valenciana_sub: "Receta valenciana original · Cocinada en vivo",
+                vegetariana_sub: "Verduras de temporada · Cocinada en vivo",
+                mixta_sub: "Carne y marisco · Cocinada en vivo",
+                price_label: "Precio", price_label2: "Precio", price_label3: "Precio",
+                on_request: "A consultar", on_request2: "A consultar", on_request3: "A consultar",
+                ingredients_label: "Ingredientes",
+                ingredients_label2: "Ingredientes",
+                ingredients_label3: "Ingredientes",
+                cta_label: "¿Interesado?",
+                cta_title: "CONSULTAR POR WHATSAPP",
+                cta_sub: "O escríbeme · hola@paellabasel.ch",
+                imprint: "[ AVISO LEGAL ]",
+                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+            }
+        };
+
+        function applyLanguage(lang) {
+            if (!translations[lang]) lang = 'de';
+            document.documentElement.setAttribute('lang', lang);
+
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang][key] !== undefined) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+
+            document.querySelectorAll('[data-i18n-list]').forEach(el => {
+                const key = el.getAttribute('data-i18n-list');
+                const items = translations[lang][key];
+                if (Array.isArray(items)) {
+                    el.innerHTML = items.map(i => `<li>${i}</li>`).join('');
+                }
+            });
+
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+            });
+
+            try { localStorage.setItem('pb_lang', lang); } catch (e) {}
+        }
+
+        function initLanguage() {
+            let lang = 'de';
+            try {
+                const saved = localStorage.getItem('pb_lang');
+                if (saved && translations[saved]) {
+                    lang = saved;
+                } else if (navigator.language) {
+                    const nl = navigator.language.toLowerCase();
+                    if (nl.startsWith('en')) lang = 'en';
+                    else if (nl.startsWith('de')) lang = 'de';
+                }
+            } catch (e) {}
+            applyLanguage(lang);
+        }
+
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.addEventListener('click', () => applyLanguage(btn.getAttribute('data-lang')));
+        });
+
+        initLanguage();
+    </script>
+
 </body>
 </html>
