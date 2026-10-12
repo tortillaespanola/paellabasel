@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPANY VALENCIA | Angebot</title>
+    <title>PAELLA BASEL | Angebot &amp; Preise</title>
+    <meta name="description" content="Angebot und Preise von Paella Basel: Showcooking live bei dir vor Ort oder fertig gekochte Paella in der Paellera geliefert. Valenciana, Vegetariana, Mixta.">
+    <link rel="canonical" href="https://www.paellabasel.ch/angebot.html">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -134,6 +137,20 @@
         .group-size-tag .gst-price {
             font-weight: 900;
             letter-spacing: -0.5px;
+        }
+
+        /* ── MODEL CARDS (Showcooking / Lieferung) ── */
+        .card.model { padding-bottom: 20px; }
+        .card.model .card-title { font-size: 1.7rem; }
+        .card.model .price-amount { white-space: nowrap; }
+        .card.model.alt { border-left: 6px solid var(--blue); }
+        .models-wrap { margin-bottom: 24px; }
+
+        @media (max-width: 480px) {
+            .card { padding: 22px 20px 20px; }
+            .card.model .card-header { flex-direction: column; gap: 14px; }
+            .card.model .card-price { text-align: left; }
+            .card.model .card-title { font-size: 1.5rem; }
         }
 
         /* ── INCLUDES CARD (top) ── */
@@ -409,31 +426,72 @@
 
         <a href="/" class="back-link" data-i18n="back_link">← Zurück / Back</a>
 
-        <span class="eyebrow">Company Valencia · Showcooking</span>
+        <span class="eyebrow" data-i18n="eyebrow">Paella Basel · Showcooking · Lieferung</span>
         <h1 data-i18n="h1">Angebot<br>u Prise</h1>
-        <span class="group-size-tag"><span data-i18n="group_size">Ab 10–12 Pers.</span><span class="gst-price">CHF 290</span></span>
 
-        <!-- ── INBEGRIFFEN (jetzt oben) ── -->
-        <div class="card-includes">
-            <span class="section-label" data-i18n="included_label">Inbegriffen · Included</span>
-            <ul class="includes" data-i18n-list="includes">
-                <li>Showcooking live vor Ort</li>
-                <li>Alle Zutaten und Material</li>
-                <li>An- und Abreise in Basel</li>
-                <li>Aufbau, Kochen und Aufräumen</li>
-                <li>Emplatado · Service am Tisch</li>
-            </ul>
+        <!-- ── ZWEI MODELLE ── -->
+        <span class="options-label" data-i18n="models_label">Zwei Modelle</span>
+        <div class="models-wrap">
+
+            <!-- MODELL 1: SHOWCOOKING -->
+            <div class="card model">
+                <div class="card-header">
+                    <div>
+                        <span class="card-tag">01</span>
+                        <div class="card-title">Showcooking</div>
+                        <div class="card-sub" data-i18n="show_sub">Live gekocht bei dir vor Ort</div>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-from" data-i18n="show_group">Ab 10–12 Pers.</span>
+                        <span class="price-amount">CHF 290</span>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <span class="section-label" data-i18n="included_label">Inbegriffen</span>
+                <ul class="includes" data-i18n-list="includes_show">
+                    <li>Showcooking live vor Ort</li>
+                    <li>Alle Zutaten und Material</li>
+                    <li>An- und Abreise in Basel</li>
+                    <li>Aufbau, Kochen und Aufräumen</li>
+                    <li>Emplatado · Service am Tisch</li>
+                </ul>
+            </div>
+
+            <!-- MODELL 2: LIEFERUNG (fertig gekocht) -->
+            <div class="card model alt">
+                <div class="card-header">
+                    <div>
+                        <span class="card-tag blue-tag">02</span>
+                        <div class="card-title" data-i18n="delivery_title">Lieferung</div>
+                        <div class="card-sub" data-i18n="delivery_sub">Fertig gekocht, in der Paellera geliefert</div>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-from" data-i18n="delivery_group">Paella für 6 Pers.</span>
+                        <span class="price-amount">CHF 139</span>
+                        <span class="price-unit" data-i18n="delivery_price_note">Richtpreis</span>
+                    </div>
+                </div>
+                <hr class="card-divider">
+                <span class="section-label" data-i18n="included_label2">Inbegriffen</span>
+                <ul class="includes" data-i18n-list="includes_delivery">
+                    <li>Paella frisch gekocht, in der Paellera</li>
+                    <li>Lieferung in Basel · Abholung auch möglich</li>
+                    <li>Gaskocher &amp; Gasflasche leihweise zum Aufwärmen</li>
+                    <li>Rückgabe des Materials innert 4 Tagen</li>
+                </ul>
+            </div>
+
         </div>
 
         <!-- ── NOTE ── -->
         <div class="note" data-i18n="note">
-            Für grössere Gruppen, zwei Paellas oder spezielle Anlässe — einfach anfragen.
+            Für grössere Gruppen, mehrere Paellas oder spezielle Anlässe — einfach anfragen.
             Jedes Event ist anders und wir finden zusammen die beste Lösung.
             Die Zutaten lassen sich jederzeit an eure Bedürfnisse anpassen. 🥘
         </div>
 
-        <!-- ── OPTIONEN ── -->
-        <span class="options-label" data-i18n="options_label">Optionen · Options</span>
+        <!-- ── SORTEN ── -->
+        <span class="options-label" data-i18n="options_label">Paellas · Für beide Modelle</span>
         <div class="options-wrap">
 
             <!-- VALENCIANA -->
@@ -441,16 +499,11 @@
                 <div class="card-header">
                     <div>
                         <div class="card-title">Valenciana</div>
-                        <div class="card-sub" data-i18n="valenciana_sub">Original valencianisches Rezept · Live gekocht</div>
-                    </div>
-                    <div class="card-price">
-                        <span class="price-from" data-i18n="price_label">Preis</span>
-                        <span class="price-amount small" data-i18n="on_request">Auf Anfrage</span>
-                        <span class="price-unit">on request</span>
+                        <div class="card-sub" data-i18n="valenciana_sub">Original valencianisches Rezept</div>
                     </div>
                 </div>
                 <hr class="card-divider">
-                <span class="section-label" data-i18n="ingredients_label">Zutaten · Ingredients</span>
+                <span class="section-label" data-i18n="ingredients_label">Zutaten</span>
                 <p class="ingredients" data-i18n="valenciana_ingredients">
                     Poulet · Kaninchen · grüne Bohnen · Tomate · Knoblauch ·
                     Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser
@@ -462,16 +515,11 @@
                 <div class="card-header">
                     <div>
                         <div class="card-title">Vegetariana</div>
-                        <div class="card-sub" data-i18n="vegetariana_sub">Saisonales Gemüse · Live gekocht</div>
-                    </div>
-                    <div class="card-price">
-                        <span class="price-from" data-i18n="price_label2">Preis</span>
-                        <span class="price-amount small" data-i18n="on_request2">Auf Anfrage</span>
-                        <span class="price-unit">on request</span>
+                        <div class="card-sub" data-i18n="vegetariana_sub">Saisonales Gemüse</div>
                     </div>
                 </div>
                 <hr class="card-divider">
-                <span class="section-label" data-i18n="ingredients_label2">Zutaten · Ingredients</span>
+                <span class="section-label" data-i18n="ingredients_label2">Zutaten</span>
                 <p class="ingredients" data-i18n="vegetariana_ingredients">
                     Saisonales Gemüse · Tomate · Knoblauch · Safran ·
                     Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Gemüsebrühe
@@ -483,16 +531,11 @@
                 <div class="card-header">
                     <div>
                         <div class="card-title">Mixta</div>
-                        <div class="card-sub" data-i18n="mixta_sub">Fleisch &amp; Meeresfrüchte · Live gekocht</div>
-                    </div>
-                    <div class="card-price">
-                        <span class="price-from" data-i18n="price_label3">Preis</span>
-                        <span class="price-amount small" data-i18n="on_request3">Auf Anfrage</span>
-                        <span class="price-unit">on request</span>
+                        <div class="card-sub" data-i18n="mixta_sub">Fleisch &amp; Meeresfrüchte</div>
                     </div>
                 </div>
                 <hr class="card-divider">
-                <span class="section-label" data-i18n="ingredients_label3">Zutaten · Ingredients</span>
+                <span class="section-label" data-i18n="ingredients_label3">Zutaten</span>
                 <p class="ingredients" data-i18n="mixta_ingredients">
                     Poulet · Meeresfrüchte · grüne Bohnen · Tomate · Knoblauch ·
                     Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser &amp; Fischfond
@@ -503,8 +546,8 @@
 
         <!-- ── CTA ── -->
         <div class="cta-block">
-            <span class="cta-label" data-i18n="cta_label">Interesse? · Interested?</span>
-            <a href="https://wa.me/+41772146639" class="btn-cta" target="_blank" rel="noopener">
+            <span class="cta-label" data-i18n="cta_label">Interesse?</span>
+            <a href="https://wa.me/41772146639?text=Hola!%20Ich%20interessiere%20mich%20f%C3%BCr%20eine%20Paella%20(Showcooking%20%2F%20Lieferung)." class="btn-cta" target="_blank" rel="noopener">
                 <div>
                     <span data-i18n="cta_title">ANFRAGE VIA WHATSAPP</span>
                     <span class="btn-cta-sub" data-i18n="cta_sub">Oder schreib mir · hola@paellabasel.ch</span>
@@ -516,7 +559,7 @@
         <div class="footer-links">
             <a href="impressum.html" class="footer-link-item" data-i18n="imprint">[ IMPRESSUM ]</a>
         </div>
-        <div class="footer" data-i18n="copyright">&copy; 2026 COMPANY VALENCIA | BASEL, CH</div>
+        <div class="footer" data-i18n="copyright">&copy; 2026 PAELLA BASEL | BASEL, CH</div>
 
     </div>
 
@@ -524,57 +567,81 @@
         const translations = {
             de: {
                 back_link: "← Zurück / Back",
+                eyebrow: "Paella Basel · Showcooking · Lieferung",
                 h1: "Angebot<br>u Prise",
-                group_size: "Ab 10–12 Pers.",
-                included_label: "Inbegriffen · Included",
-                includes: [
+                models_label: "Zwei Modelle",
+                show_sub: "Live gekocht bei dir vor Ort",
+                show_group: "Ab 10–12 Pers.",
+                delivery_title: "Lieferung",
+                delivery_sub: "Fertig gekocht, in der Paellera geliefert",
+                delivery_group: "Paella für 6 Pers.",
+                delivery_price_note: "Richtpreis",
+                included_label: "Inbegriffen",
+                included_label2: "Inbegriffen",
+                includes_show: [
                     "Showcooking live vor Ort",
                     "Alle Zutaten und Material",
                     "An- und Abreise in Basel",
                     "Aufbau, Kochen und Aufräumen",
                     "Emplatado · Service am Tisch"
                 ],
-                note: "Für grössere Gruppen, zwei Paellas oder spezielle Anlässe — einfach anfragen. Jedes Event ist anders und wir finden zusammen die beste Lösung. Die Zutaten lassen sich jederzeit an eure Bedürfnisse anpassen. 🥘",
-                options_label: "Optionen · Options",
-                valenciana_sub: "Original valencianisches Rezept · Live gekocht",
-                vegetariana_sub: "Saisonales Gemüse · Live gekocht",
-                mixta_sub: "Fleisch &amp; Meeresfrüchte · Live gekocht",
+                includes_delivery: [
+                    "Paella frisch gekocht, in der Paellera",
+                    "Lieferung in Basel · Abholung auch möglich",
+                    "Gaskocher &amp; Gasflasche leihweise zum Aufwärmen",
+                    "Rückgabe des Materials innert 4 Tagen"
+                ],
+                note: "Für grössere Gruppen, mehrere Paellas oder spezielle Anlässe — einfach anfragen. Jedes Event ist anders und wir finden zusammen die beste Lösung. Die Zutaten lassen sich jederzeit an eure Bedürfnisse anpassen. 🥘",
+                options_label: "Paellas · Für beide Modelle",
+                valenciana_sub: "Original valencianisches Rezept",
+                vegetariana_sub: "Saisonales Gemüse",
+                mixta_sub: "Fleisch &amp; Meeresfrüchte",
                 valenciana_ingredients: "Poulet · Kaninchen · grüne Bohnen · Tomate · Knoblauch · Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser",
                 vegetariana_ingredients: "Saisonales Gemüse · Tomate · Knoblauch · Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Gemüsebrühe",
                 mixta_ingredients: "Poulet · Meeresfrüchte · grüne Bohnen · Tomate · Knoblauch · Safran · Rosmarin · Olivenöl extra vergine · Salz · Pfeffer · Wasser &amp; Fischfond",
-                price_label: "Preis", price_label2: "Preis", price_label3: "Preis",
-                on_request: "Auf Anfrage", on_request2: "Auf Anfrage", on_request3: "Auf Anfrage",
-                ingredients_label: "Zutaten · Ingredients",
-                ingredients_label2: "Zutaten · Ingredients",
-                ingredients_label3: "Zutaten · Ingredients",
-                cta_label: "Interesse? · Interested?",
+                ingredients_label: "Zutaten",
+                ingredients_label2: "Zutaten",
+                ingredients_label3: "Zutaten",
+                cta_label: "Interesse?",
                 cta_title: "ANFRAGE VIA WHATSAPP",
                 cta_sub: "Oder schreib mir · hola@paellabasel.ch",
                 imprint: "[ IMPRESSUM ]",
-                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+                copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             },
             en: {
                 back_link: "← Back",
+                eyebrow: "Paella Basel · Showcooking · Delivery",
                 h1: "Offer<br>&amp; Pricing",
-                group_size: "From 10–12 guests",
+                models_label: "Two options",
+                show_sub: "Cooked live at your place",
+                show_group: "From 10–12 guests",
+                delivery_title: "Delivery",
+                delivery_sub: "Ready-cooked, delivered in the paella pan",
+                delivery_group: "Paella for 6 guests",
+                delivery_price_note: "Guide price",
                 included_label: "Included",
-                includes: [
+                included_label2: "Included",
+                includes_show: [
                     "Live showcooking on site",
                     "All ingredients and equipment",
                     "Travel to/from within Basel",
                     "Setup, cooking and cleanup",
                     "Plating · Table service"
                 ],
-                note: "Bigger groups, two paellas, or something special? Just ask. Every event is different and together we'll find the best solution. Ingredients can always be adapted to your needs. 🥘",
-                options_label: "Options",
-                valenciana_sub: "Original Valencian recipe · Cooked live",
-                vegetariana_sub: "Seasonal vegetables · Cooked live",
-                mixta_sub: "Meat &amp; seafood · Cooked live",
+                includes_delivery: [
+                    "Freshly cooked paella, in its pan",
+                    "Delivery within Basel · Pickup also possible",
+                    "Gas burner &amp; gas bottle on loan for reheating",
+                    "Equipment returned within 4 days"
+                ],
+                note: "Bigger groups, several paellas, or something special? Just ask. Every event is different and together we'll find the best solution. Ingredients can always be adapted to your needs. 🥘",
+                options_label: "Paellas · For both options",
+                valenciana_sub: "Original Valencian recipe",
+                vegetariana_sub: "Seasonal vegetables",
+                mixta_sub: "Meat &amp; seafood",
                 valenciana_ingredients: "Chicken · rabbit · green beans · tomato · garlic · saffron · rosemary · extra virgin olive oil · salt · pepper · water",
                 vegetariana_ingredients: "Seasonal vegetables · tomato · garlic · saffron · rosemary · extra virgin olive oil · salt · pepper · vegetable stock",
                 mixta_ingredients: "Chicken · seafood · green beans · tomato · garlic · saffron · rosemary · extra virgin olive oil · salt · pepper · water &amp; fish stock",
-                price_label: "Price", price_label2: "Price", price_label3: "Price",
-                on_request: "On request", on_request2: "On request", on_request3: "On request",
                 ingredients_label: "Ingredients",
                 ingredients_label2: "Ingredients",
                 ingredients_label3: "Ingredients",
@@ -582,38 +649,50 @@
                 cta_title: "REQUEST VIA WHATSAPP",
                 cta_sub: "Or email me · hola@paellabasel.ch",
                 imprint: "[ IMPRINT ]",
-                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+                copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             },
             es: {
                 back_link: "← Volver",
+                eyebrow: "Paella Basel · Showcooking · A domicilio",
                 h1: "Oferta<br>y Precios",
-                group_size: "Desde 10–12 pers.",
+                models_label: "Dos modalidades",
+                show_sub: "Cocinada en vivo en tu casa",
+                show_group: "Desde 10–12 pers.",
+                delivery_title: "A domicilio",
+                delivery_sub: "Ya hecha, te la llevo en su paellera",
+                delivery_group: "Paella para 6 pers.",
+                delivery_price_note: "Precio orientativo",
                 included_label: "Incluido",
-                includes: [
+                included_label2: "Incluido",
+                includes_show: [
                     "Showcooking en vivo, in situ",
                     "Todos los ingredientes y el material",
                     "Desplazamiento en Basilea",
                     "Montaje, cocina y recogida",
                     "Emplatado · Servicio en mesa"
                 ],
-                note: "¿Grupos más grandes, dos paellas o algo especial? Escríbeme. Cada evento es distinto y juntos encontramos la mejor solución. Los ingredientes se pueden adaptar siempre a vuestras necesidades. 🥘",
-                options_label: "Opciones",
-                valenciana_sub: "Receta valenciana original · Cocinada en vivo",
-                vegetariana_sub: "Verduras de temporada · Cocinada en vivo",
-                mixta_sub: "Carne y marisco · Cocinada en vivo",
+                includes_delivery: [
+                    "Paella recién hecha, en su paellera",
+                    "Entrega en Basilea · También para recoger",
+                    "Préstamo de fogón y bombona para recalentar",
+                    "Devolución del material en 4 días"
+                ],
+                note: "¿Grupos más grandes, varias paellas o algo especial? Escríbeme. Cada evento es distinto y juntos encontramos la mejor solución. Los ingredientes se pueden adaptar siempre a vuestras necesidades. 🥘",
+                options_label: "Paellas · Para las dos modalidades",
+                valenciana_sub: "Receta valenciana original",
+                vegetariana_sub: "Verduras de temporada",
+                mixta_sub: "Carne y marisco",
                 valenciana_ingredients: "Pollo · conejo · judía verde · tomate · ajo · azafrán · romero · aceite de oliva virgen extra · sal · pimienta · agua",
                 vegetariana_ingredients: "Verduras de temporada · tomate · ajo · azafrán · romero · aceite de oliva virgen extra · sal · pimienta · caldo de verduras",
                 mixta_ingredients: "Pollo · marisco · judía verde · tomate · ajo · azafrán · romero · aceite de oliva virgen extra · sal · pimienta · agua y fumet de pescado",
-                price_label: "Precio", price_label2: "Precio", price_label3: "Precio",
-                on_request: "A consultar", on_request2: "A consultar", on_request3: "A consultar",
                 ingredients_label: "Ingredientes",
                 ingredients_label2: "Ingredientes",
                 ingredients_label3: "Ingredientes",
-                cta_label: "¿Interesado?",
+                cta_label: "¿Te interesa?",
                 cta_title: "CONSULTAR POR WHATSAPP",
                 cta_sub: "O escríbeme · hola@paellabasel.ch",
                 imprint: "[ AVISO LEGAL ]",
-                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+                copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             }
         };
 

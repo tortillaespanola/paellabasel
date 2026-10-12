@@ -1,2 +1,2 @@
 # paellabasel
-Live Valencianische Paella in Basel
+Paella Basel — valencianische Paella in Basel: Showcooking vor Ort oder fertig gekocht geliefert.

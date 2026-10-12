@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>COMPANY VALENCIA | Paella · Basel</title>
-    <meta name="description" content="Valencianische Paella live gekocht in Basel. Showcooking für Events, Feste und private Anlässe. Authentisch, handgemacht, vor Ort. Ab 10 Personen.">
-    <meta name="keywords" content="Paella Basel, Paella Showcooking Basel, valencianische Paella Basel, Paella Event Basel, Paella kochen Basel, spanisches Essen Basel">
-    <meta name="author" content="Company Valencia Basel">
+    <title>PAELLA BASEL | Valencianische Paella · Showcooking &amp; Lieferung</title>
+    <meta name="description" content="Paella Basel: valencianische Paella für Events, Feste und private Anlässe. Live gekocht bei dir vor Ort (Showcooking) oder fertig gekocht in der Paellera geliefert.">
+    <meta name="keywords" content="Paella Basel, Paella Showcooking Basel, Paella Lieferung Basel, valencianische Paella Basel, Paella Event Basel, Paella Catering Basel, spanisches Essen Basel">
+    <meta name="author" content="Paella Basel">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://www.paellabasel.ch/">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
 
-    <meta property="og:title" content="Company Valencia | Paella Showcooking Basel">
-    <meta property="og:description" content="Valencianische Paella live vor Ort — für dein Fest, deinen Hof, dein Event. Ab 10 Personen. Basel, Schweiz.">
+    <meta property="og:site_name" content="Paella Basel">
+    <meta property="og:title" content="Paella Basel | Showcooking oder Lieferung">
+    <meta property="og:description" content="Valencianische Paella in Basel — live gekocht an deinem Fest oder fertig in der Paellera geliefert.">
     <meta property="og:url" content="https://www.paellabasel.ch/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_CH">
 
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Company Valencia | Paella Basel">
-    <meta name="twitter:description" content="Valencianische Paella live gekocht in Basel. Showcooking ab 10 Personen.">
+    <meta name="twitter:title" content="Paella Basel | Showcooking oder Lieferung">
+    <meta name="twitter:description" content="Valencianische Paella in Basel — live gekocht oder fertig geliefert.">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FoodEstablishment",
+        "name": "Paella Basel",
+        "url": "https://www.paellabasel.ch/",
+        "email": "hola@paellabasel.ch",
+        "telephone": "+41 77 214 66 39",
+        "servesCuisine": "Spanish",
+        "areaServed": "Basel",
+        "address": { "@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH" },
+        "makesOffer": [
+            { "@type": "Offer", "name": "Paella Showcooking" },
+            { "@type": "Offer", "name": "Paella Lieferung" }
+        ]
+    }
+    </script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -28,7 +48,7 @@
             --sun:    #f8e71c;
             --sun-d:  #e0d010;
             --ink:    #0f0d00;
-            --red:    #42a7c6;
+            --blue:   #42a7c6;
             --muted:  rgba(15,13,0,0.68);
             --line:   rgba(15,13,0,0.12);
         }
@@ -113,26 +133,25 @@
             margin-bottom: 10px;
         }
 
-        .hero-company {
+        .hero-paella,
+        .hero-basel {
             font-family: 'Montserrat', sans-serif;
             font-weight: 900;
-            font-size: clamp(3.4rem, 14vw, 6rem);
+            font-size: clamp(3.4rem, 15vw, 6.4rem);
             line-height: 0.88;
             letter-spacing: -3px;
             text-transform: uppercase;
             display: block;
-            color: var(--ink);
         }
 
-        .hero-valencia {
+        .hero-paella { color: var(--ink); }
+        .hero-basel  { color: var(--blue); }
+
+        .concept-text strong {
             font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            font-size: clamp(3.4rem, 14vw, 6rem);
-            line-height: 0.88;
-            letter-spacing: -3px;
+            font-weight: 800;
             text-transform: uppercase;
-            display: block;
-            color: var(--red);
+            letter-spacing: 0.5px;
         }
 
         .hero-descriptor {
@@ -430,31 +449,32 @@
     <div class="container">
 
         <div class="hero">
-            <span class="hero-eyebrow" data-i18n="eyebrow">Paellas · Showcooking · Basel</span>
-            <div>
-                <span class="hero-company">Company</span>
-                <span class="hero-valencia">Valencia</span>
-            </div>
+            <span class="hero-eyebrow" data-i18n="eyebrow">Showcooking · Lieferung · Events</span>
+            <h1 style="margin:0">
+                <span class="hero-paella">Paella</span>
+                <span class="hero-basel">Basel</span>
+            </h1>
             <span class="hero-descriptor"><span class="dash">── </span><span data-i18n="descriptor">Valencianische Paella</span><span class="dash"> ──</span></span>
-            <div class="location-tag" data-i18n="location_tag">Live · Basel · Open Air</div>
+            <div class="location-tag" data-i18n="location_tag">Live gekocht oder geliefert</div>
         </div>
 
         <div class="divider"></div>
 
         <div class="concept">
-            <span class="concept-label" data-i18n="concept_label">Was ist das</span>
+            <span class="concept-label" data-i18n="concept_label">Zwei Wege zur Paella</span>
             <p class="concept-text" data-i18n="concept_text">
-                Eine Paella, live gekocht — in deinem Hof, deinem Garten, deinem Fest.<br>
+                <strong>Showcooking</strong> — ich koche live bei dir: im Hof, im Garten, an deinem Fest.<br>
+                <strong>Lieferung</strong> — fertig gekocht, in der Paellera direkt zu dir.<br>
                 Echter Reis, echtes Feuer, valencianischer Eigensinn.
             </p>
         </div>
 
         <div class="links-cascade">
 
-            <a href="https://wa.me/+41772146639" class="btn-link btn-main" target="_blank" rel="noopener">
+            <a href="https://wa.me/41772146639?text=Hola!%20Ich%20interessiere%20mich%20f%C3%BCr%20eine%20Paella%20(Showcooking%20%2F%20Lieferung)." class="btn-link btn-main" target="_blank" rel="noopener">
                 <div class="btn-text-wrap">
                     <span class="btn-title" data-i18n="req_title">ANFRAGE STELLEN</span>
-                    <span class="small-text" data-i18n="req_sub">Book a showcooking · Jetzt anfragen</span>
+                    <span class="small-text" data-i18n="req_sub">Showcooking oder Lieferung · Jetzt anfragen</span>
                 </div>
                 <span class="btn-arrow">→</span>
             </a>
@@ -462,7 +482,7 @@
             <a href="angebot.html" class="btn-link">
                 <div class="btn-text-wrap">
                     <span class="btn-title" data-i18n="offer_title">ANGEBOT U PREISE</span>
-                    <span class="small-text" data-i18n="offer_sub">What's included · Was dabei ist</span>
+                    <span class="small-text" data-i18n="offer_sub">Beide Modelle · Was dabei ist</span>
                 </div>
                 <span class="btn-arrow">→</span>
             </a>
@@ -494,7 +514,7 @@
         </div>
 
         <div class="footer" data-i18n="copyright">
-            &copy; 2026 COMPANY VALENCIA | BASEL, CH
+            &copy; 2026 PAELLA BASEL | BASEL, CH
         </div>
 
     </div>
@@ -503,55 +523,55 @@
         /* ── LANGUAGE SWITCHER ── */
         const translations = {
             de: {
-                eyebrow: "Paellas · Showcooking · Basel",
+                eyebrow: "Showcooking · Lieferung · Events",
                 descriptor: "Valencianische Paella",
-                location_tag: "Live · Basel · Open Air",
-                concept_label: "Was ist das",
-                concept_text: "Eine Paella, live gekocht — in deinem Hof, deinem Garten, deinem Fest.<br>Echter Reis, echtes Feuer, valencianischer Eigensinn.",
+                location_tag: "Live gekocht oder geliefert",
+                concept_label: "Zwei Wege zur Paella",
+                concept_text: "<strong>Showcooking</strong> — ich koche live bei dir: im Hof, im Garten, an deinem Fest.<br><strong>Lieferung</strong> — fertig gekocht, in der Paellera direkt zu dir.<br>Echter Reis, echtes Feuer, valencianischer Eigensinn.",
                 req_title: "ANFRAGE STELLEN",
-                req_sub: "Book a showcooking · Jetzt anfragen",
+                req_sub: "Showcooking oder Lieferung · Jetzt anfragen",
                 offer_title: "ANGEBOT U PREISE",
-                offer_sub: "What's included · Was dabei ist",
+                offer_sub: "Beide Modelle · Was dabei ist",
                 mail_title: "SCHRYB MIR UFF D'MAIL",
                 xlink_pill: "Anderes Projekt",
                 xlink_eyebrow: "Tortilla · Basel · Zum Abholen",
                 xlink_sub: "Hausgemachte spanische Tortilla · espanola.ch",
                 imprint: "[ IMPRESSUM ]",
-                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+                copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             },
             en: {
-                eyebrow: "Paellas · Showcooking · Basel",
+                eyebrow: "Showcooking · Delivery · Events",
                 descriptor: "Valencian Paella",
-                location_tag: "Live · Basel · Open Air",
-                concept_label: "What is this",
-                concept_text: "A paella, cooked live — in your courtyard, your garden, your celebration.<br>Real rice, real fire, Valencian stubbornness.",
+                location_tag: "Cooked live or delivered",
+                concept_label: "Two ways to paella",
+                concept_text: "<strong>Showcooking</strong> — I cook live at your place: courtyard, garden, celebration.<br><strong>Delivery</strong> — ready-cooked, brought to you in the paella pan.<br>Real rice, real fire, Valencian stubbornness.",
                 req_title: "MAKE A REQUEST",
-                req_sub: "Book a showcooking · Get in touch now",
+                req_sub: "Showcooking or delivery · Get in touch now",
                 offer_title: "OFFER & PRICING",
-                offer_sub: "What's included",
-                mail_title: "SEND US AN EMAIL",
+                offer_sub: "Both options · What's included",
+                mail_title: "SEND ME AN EMAIL",
                 xlink_pill: "Other Project",
                 xlink_eyebrow: "Tortilla · Basel · Takeaway",
                 xlink_sub: "Homemade Spanish tortilla · espanola.ch",
                 imprint: "[ IMPRINT ]",
-                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+                copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             },
             es: {
-                eyebrow: "Paellas · Showcooking · Basel",
+                eyebrow: "Showcooking · A domicilio · Eventos",
                 descriptor: "Paella Valenciana",
-                location_tag: "Live · Basel · Open Air",
-                concept_label: "Qué es esto",
-                concept_text: "Una paella, cocinada en vivo — en tu patio, tu jardín, tu fiesta.<br>Arroz de verdad, fuego de verdad, tozudez valenciana.",
+                location_tag: "En vivo o a domicilio",
+                concept_label: "Dos formas de tener tu paella",
+                concept_text: "<strong>Showcooking</strong> — la cocino en vivo en tu casa: en el patio, en el jardín, en tu fiesta.<br><strong>A domicilio</strong> — ya hecha, te la llevo en su paellera.<br>Arroz de verdad, fuego de verdad, tozudez valenciana.",
                 req_title: "HACER UNA RESERVA",
-                req_sub: "Reserva un showcooking · Escríbeme ahora",
+                req_sub: "Showcooking o a domicilio · Escríbeme ahora",
                 offer_title: "OFERTA Y PRECIOS",
-                offer_sub: "Qué incluye",
+                offer_sub: "Las dos modalidades · Qué incluye",
                 mail_title: "ESCRÍBEME UN CORREO",
                 xlink_pill: "Otro Proyecto",
                 xlink_eyebrow: "Tortilla · Basel · Para Llevar",
                 xlink_sub: "Tortilla española casera · espanola.ch",
                 imprint: "[ AVISO LEGAL ]",
-                copyright: "&copy; 2026 COMPANY VALENCIA | BASEL, CH"
+                copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             }
         };
 
