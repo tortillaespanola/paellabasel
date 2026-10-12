@@ -7,6 +7,7 @@
     <meta name="description" content="Angebot und Preise von Paella Basel: Showcooking live bei dir vor Ort oder fertig gekochte Paella in der Paellera geliefert. Valenciana, Vegetariana, Mixta.">
     <link rel="canonical" href="https://www.paellabasel.ch/angebot.html">
     <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <meta property="og:image" content="https://www.paellabasel.ch/img/og-paella-basel.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -147,11 +148,27 @@
         .models-wrap { margin-bottom: 24px; }
 
         @media (max-width: 480px) {
-            .card { padding: 22px 20px 20px; }
             .card.model .card-header { flex-direction: column; gap: 14px; }
             .card.model .card-price { text-align: left; }
             .card.model .card-title { font-size: 1.5rem; }
         }
+
+        /* ── CARD PHOTOS ── */
+        .card-photo {
+            margin: -28px -28px 24px;
+            border-bottom: 1.5px solid var(--ink);
+            background: var(--ink);
+            overflow: hidden;
+        }
+        .card-photo img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            object-fit: cover;
+        }
+        .card-photo.slim img { aspect-ratio: 21 / 9; }
+
 
         /* ── INCLUDES CARD (top) ── */
         .card-includes {
@@ -412,6 +429,11 @@
             from { opacity: 0; transform: translateY(14px); }
             to   { opacity: 1; transform: translateY(0); }
         }
+        /* ── MOBILE (kept last so it wins over base rules) ── */
+        @media (max-width: 480px) {
+            .card       { padding: 22px 20px 20px; }
+            .card-photo { margin: -22px -20px 20px; }
+        }
     </style>
 </head>
 <body>
@@ -435,6 +457,9 @@
 
             <!-- MODELL 1: SHOWCOOKING -->
             <div class="card model">
+                <div class="card-photo">
+                    <img src="img/showcooking-servir-800.webp" srcset="img/showcooking-servir-800.webp 800w, img/showcooking-servir-1600.webp 1600w" sizes="(max-width: 588px) calc(100vw - 48px), 540px" width="1600" height="900" style="object-position: 50% 45%" decoding="async" alt="Showcooking: ein Gast bekommt seinen Teller Paella serviert">
+                </div>
                 <div class="card-header">
                     <div>
                         <span class="card-tag">01</span>
@@ -459,6 +484,9 @@
 
             <!-- MODELL 2: LIEFERUNG (fertig gekocht) -->
             <div class="card model alt">
+                <div class="card-photo">
+                    <img src="img/paella-valenciana-800.webp" srcset="img/paella-valenciana-800.webp 800w, img/paella-valenciana-1600.webp 1600w" sizes="(max-width: 588px) calc(100vw - 48px), 540px" width="1600" height="900" loading="lazy" decoding="async" alt="Fertig gekochte Paella Valenciana in der Paellera">
+                </div>
                 <div class="card-header">
                     <div>
                         <span class="card-tag blue-tag">02</span>
@@ -496,6 +524,9 @@
 
             <!-- VALENCIANA -->
             <div class="card">
+                <div class="card-photo slim">
+                    <img src="img/paella-detalle-800.webp" srcset="img/paella-detalle-800.webp 800w, img/paella-detalle-1600.webp 1600w" sizes="(max-width: 588px) calc(100vw - 48px), 540px" width="1600" height="686" loading="lazy" decoding="async" alt="Nahaufnahme einer Paella Valenciana mit Reis, grünen Bohnen und Rosmarin">
+                </div>
                 <div class="card-header">
                     <div>
                         <div class="card-title">Valenciana</div>

@@ -17,8 +17,13 @@
     <meta property="og:url" content="https://www.paellabasel.ch/">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="de_CH">
+    <meta property="og:image" content="https://www.paellabasel.ch/img/og-paella-basel.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Paella Valenciana in der Paellera">
 
-    <meta name="twitter:card" content="summary">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://www.paellabasel.ch/img/og-paella-basel.jpg">
     <meta name="twitter:title" content="Paella Basel | Showcooking oder Lieferung">
     <meta name="twitter:description" content="Valencianische Paella in Basel — live gekocht oder fertig geliefert.">
 
@@ -32,6 +37,7 @@
         "telephone": "+41 77 214 66 39",
         "servesCuisine": "Spanish",
         "areaServed": "Basel",
+        "image": "https://www.paellabasel.ch/img/og-paella-basel.jpg",
         "address": { "@type": "PostalAddress", "addressLocality": "Basel", "addressCountry": "CH" },
         "makesOffer": [
             { "@type": "Offer", "name": "Paella Showcooking" },
@@ -409,6 +415,102 @@
             animation: fadeUp 0.55s 0.58s ease both;
         }
 
+        /* ── PHOTOS ── */
+        .photo-hero {
+            margin: 0 0 52px;
+            animation: fadeUp 0.55s 0.24s ease both;
+        }
+
+        .photo-hero .frame {
+            border: 2.5px solid var(--ink);
+            box-shadow: 8px 8px 0 var(--ink);
+            background: var(--ink);
+            margin-right: 8px;
+        }
+
+        .photo-hero img,
+        .gallery img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .photo-cap {
+            display: block;
+            font-size: 0.62rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            text-align: left;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .gallery-wrap {
+            margin: 64px auto 0;
+            text-align: left;
+            animation: fadeUp 0.55s 0.4s ease both;
+        }
+
+        .gallery-label {
+            font-size: 0.6rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 700;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 28px 14px;
+            margin: 0;
+        }
+
+        .gallery figure { margin: 0; }
+        .gallery .wide  { grid-column: 1 / -1; }
+
+        .gallery .frame {
+            border: 1.5px solid var(--ink);
+            background: var(--ink);
+            overflow: hidden;
+        }
+
+        .gallery img { transition: transform 0.5s ease; }
+        .gallery figure:hover img { transform: scale(1.025); }
+
+        .gallery figcaption {
+            margin-top: 10px;
+            font-size: 0.68rem;
+            line-height: 1.5;
+            color: var(--muted);
+        }
+
+        .gallery .step {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--ink);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .gallery .step .num {
+            font-family: 'Space Mono', monospace;
+            font-weight: 700;
+            color: var(--blue);
+            margin-right: 8px;
+        }
+
+        @media (max-width: 480px) {
+            .gallery { gap: 24px 10px; }
+            .photo-hero .frame { box-shadow: 6px 6px 0 var(--ink); margin-right: 6px; }
+        }
+
         /* ── RICE CANVAS ── */
         #rice-canvas {
             position: fixed;
@@ -460,6 +562,17 @@
 
         <div class="divider"></div>
 
+        <figure class="photo-hero">
+            <div class="frame">
+                <img src="img/paella-valenciana-800.webp"
+                     srcset="img/paella-valenciana-800.webp 800w, img/paella-valenciana-1600.webp 1600w"
+                     sizes="(max-width: 620px) calc(100vw - 56px), 572px"
+                     width="1600" height="1066" decoding="async" fetchpriority="high"
+                     alt="Paella Valenciana mit Poulet, Kaninchen, grünen Bohnen und Rosmarin in der Paellera">
+            </div>
+            <figcaption class="photo-cap" data-i18n="photo_hero_cap">Paella Valenciana · Poulet, Kaninchen, grüne Bohnen, Rosmarin</figcaption>
+        </figure>
+
         <div class="concept">
             <span class="concept-label" data-i18n="concept_label">Zwei Wege zur Paella</span>
             <p class="concept-text" data-i18n="concept_text">
@@ -496,6 +609,28 @@
             </a>
 
         </div>
+
+        <section class="gallery-wrap" aria-labelledby="gallery-title">
+            <span class="gallery-label" id="gallery-title" data-i18n="gallery_label">So läuft ein Showcooking</span>
+            <div class="gallery">
+                <figure class="wide">
+                    <div class="frame"><img src="img/sofrito-800.webp" srcset="img/sofrito-800.webp 800w, img/sofrito-1600.webp 1600w" sizes="(max-width: 620px) calc(100vw - 48px), 580px" width="1600" height="1066" loading="lazy" decoding="async" alt="Poulet wird in der Paellera über dem Gasbrenner angebraten"></div>
+                    <figcaption><span class="step"><span class="num">01</span><span data-i18n="g1_title">Anbraten</span></span><span data-i18n="g1_text">Das Fleisch, langsam goldbraun angebraten.</span></figcaption>
+                </figure>
+                <figure>
+                    <div class="frame"><img src="img/showcooking-fuego-600.webp" srcset="img/showcooking-fuego-600.webp 600w, img/showcooking-fuego-1000.webp 1000w" sizes="(max-width: 620px) calc(50vw - 30px), 283px" width="1000" height="1250" loading="lazy" decoding="async" alt="Der Koch am Paellabrenner im Hinterhof"></div>
+                    <figcaption><span class="step"><span class="num">02</span><span data-i18n="g2_title">Am Feuer</span></span><span data-i18n="g2_text">Live gekocht, vor deinen Gästen.</span></figcaption>
+                </figure>
+                <figure>
+                    <div class="frame"><img src="img/showcooking-chef-600.webp" srcset="img/showcooking-chef-600.webp 600w, img/showcooking-chef-1000.webp 1000w" sizes="(max-width: 620px) calc(50vw - 30px), 283px" width="1000" height="1250" loading="lazy" decoding="async" alt="Der Koch richtet einen Teller Paella an"></div>
+                    <figcaption><span class="step"><span class="num">03</span><span data-i18n="g3_title">Anrichten</span></span><span data-i18n="g3_text">Direkt aus der Paellera auf den Teller.</span></figcaption>
+                </figure>
+                <figure class="wide">
+                    <div class="frame"><img src="img/showcooking-servir-800.webp" srcset="img/showcooking-servir-800.webp 800w, img/showcooking-servir-1600.webp 1600w" sizes="(max-width: 620px) calc(100vw - 48px), 580px" width="1600" height="1066" loading="lazy" decoding="async" alt="Ein Gast bekommt seinen Teller Paella serviert"></div>
+                    <figcaption><span class="step"><span class="num">04</span><span data-i18n="g4_title">Am Tisch</span></span><span data-i18n="g4_text">Serviert, mit Brot — und Nachschlag.</span></figcaption>
+                </figure>
+            </div>
+        </section>
 
         <div class="xlink-wrapper">
             <a href="https://www.espanola.ch" class="xlink-banner" target="_blank" rel="noopener">
@@ -537,6 +672,12 @@
                 xlink_eyebrow: "Tortilla · Basel · Zum Abholen",
                 xlink_sub: "Hausgemachte spanische Tortilla · espanola.ch",
                 imprint: "[ IMPRESSUM ]",
+                photo_hero_cap: "Paella Valenciana · Poulet, Kaninchen, grüne Bohnen, Rosmarin",
+                gallery_label: "So läuft ein Showcooking",
+                g1_title: "Anbraten", g1_text: "Das Fleisch, langsam goldbraun angebraten.",
+                g2_title: "Am Feuer", g2_text: "Live gekocht, vor deinen Gästen.",
+                g3_title: "Anrichten", g3_text: "Direkt aus der Paellera auf den Teller.",
+                g4_title: "Am Tisch", g4_text: "Serviert, mit Brot — und Nachschlag.",
                 copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             },
             en: {
@@ -554,6 +695,12 @@
                 xlink_eyebrow: "Tortilla · Basel · Takeaway",
                 xlink_sub: "Homemade Spanish tortilla · espanola.ch",
                 imprint: "[ IMPRINT ]",
+                photo_hero_cap: "Paella Valenciana · Chicken, rabbit, green beans, rosemary",
+                gallery_label: "How a showcooking works",
+                g1_title: "Searing", g1_text: "The meat, slowly browned until golden.",
+                g2_title: "On the fire", g2_text: "Cooked live, in front of your guests.",
+                g3_title: "Plating", g3_text: "Straight from the pan to the plate.",
+                g4_title: "At the table", g4_text: "Served with bread — and seconds.",
                 copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             },
             es: {
@@ -571,6 +718,12 @@
                 xlink_eyebrow: "Tortilla · Basel · Para Llevar",
                 xlink_sub: "Tortilla española casera · espanola.ch",
                 imprint: "[ AVISO LEGAL ]",
+                photo_hero_cap: "Paella Valenciana · Pollo, conejo, judía verde, romero",
+                gallery_label: "Así es un showcooking",
+                g1_title: "Sofrito", g1_text: "La carne, dorada a fuego lento.",
+                g2_title: "Al fuego", g2_text: "Cocinada en vivo, delante de tus invitados.",
+                g3_title: "Emplatado", g3_text: "De la paellera directa al plato.",
+                g4_title: "A la mesa", g4_text: "Servida con pan — y para repetir.",
                 copyright: "&copy; 2026 PAELLA BASEL | BASEL, CH"
             }
         };
